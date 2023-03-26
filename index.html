@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>Expense Tracker</h1>
+        </header>
+        <form @submit.prevent="addExpense">
+            <input id="expenseInput" type="text" name="expense" v-model="input.expense" required placeholder="e.g Food"
+                autocomplete="off">
+            <input id="costInput" type="number" name="cost" v-model="input.cost" required placeholder="Cost">
+            <input id="dateInput" type="date" name="date" v-model="input.date" required title="Date">
+            <select id="categoryInput" name="category" v-model="input.category" required title="Category">
+                <option disabled value="">Select Category</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Rent">Rent</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Personal-Care">Peronal Care</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+
+            <button id="addExpenseButton" type="submit">Add Expense</button>
+        </form>
+        <div class="expenses">
+            <h2>Your Expenses</h2>
+            <div class="filters">
+                <div>
+                    <label for="categoryFilter">Category:</label>
+                    <select name="categoryFilter" id="categoryFilter" v-model="categoryFilter">
+                        <option value="All">All</option>
+                        <option value="Groceries">Groceries</option>
+                        <option value="Rent">Rent</option>
+                        <option value="Utilities">Utilities</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Personal-Care">Peronal Care</option>
+                        <option value="Miscellaneous">Miscellaneous</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="dateSpanFilter">Date Span:</label>
+                    <input id="dateSpanFilter" type="checkbox" name="dateSpanFilter" v-model="dateSpanFilter">
+                    <div v-if="dateSpanFilter">
+                        <input id="dateStartFilter" type="date" name="dateStartFilter" v-model="dateStartFilter">
+                        -
+                        <input id="dateEndFilter" type="date" name="dateEndFilter" v-model="dateEndFilter">
+                    </div>
+                </div>
+            </div>
+
+            <div class="expensesData" v-if="filteredExpenses.length > 0">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Expense</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tBodyRow" v-for="expense in filteredExpenses" :key="expense.id">
+                            <td v-bind:id="'expenseRow' + expense.id">{{expense.expense}}</td>
+                            <td v-bind:id="'dateRow' + expense.id">{{expense.date}}</td>
+                            <td v-bind:id="'categoryRow' + expense.id">{{expense.category}}</td>
+                            <td v-bind:id="'costRow' + expense.id"><span class="cost">{{expense.cost}} kr</span></td>
+                            <td v-bind:id="'removeButton' + expense.id"><button class="removeButton"
+                                    @click="removeExpense(expense.id)">Remove</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="summaryRow">
+                            <td colspan="4">Total: {{totalSum}} kr</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div v-else>
+                <p>No expenses...</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

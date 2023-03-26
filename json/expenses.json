@@ -1,0 +1,110 @@
+[
+  {
+    "expense": "Milk",
+    "cost": 20,
+    "date": "2022-05-03",
+    "category": "Groceries"
+  },
+  {
+    "expense": "Rent",
+    "cost": 7500,
+    "date": "2022-05-17",
+    "category": "Rent"
+  },
+  {
+    "expense": "Electricity",
+    "cost": 1500,
+    "date": "2022-08-20",
+    "category": "Utilities"
+  },
+  {
+    "expense": "Gasoline",
+    "cost": 600,
+    "date": "2022-06-14",
+    "category": "Transportation"
+  },
+  {
+    "expense": "Movie ticket",
+    "cost": 150,
+    "date": "2023-01-22",
+    "category": "Entertainment"
+  },
+  {
+    "expense": "Toothpaste",
+    "cost": 20,
+    "date": "2022-02-15",
+    "category": "Personal-Care"
+  },
+  {
+    "expense": "Miscellaneous item",
+    "cost": 300,
+    "date": "2022-08-16",
+    "category": "Miscellaneous"
+  },
+  {
+    "expense": "Bananas",
+    "cost": 100,
+    "date": "2022-02-22",
+    "category": "Groceries"
+  },
+  {
+    "expense": "Internet",
+    "cost": 350,
+    "date": "2022-05-12",
+    "category": "Utilities"
+  },
+  {
+    "expense": "Bus ticket",
+    "cost": 20,
+    "date": "2022-07-08",
+    "category": "Transportation"
+  },
+  {
+    "expense": "Concert ticket",
+    "cost": 750,
+    "date": "2022-06-25",
+    "category": "Entertainment"
+  },
+  {
+    "expense": "Shampoo",
+    "cost": 80,
+    "date": "2022-01-18",
+    "category": "Personal-Care"
+  },
+  {
+    "expense": "Random item",
+    "cost": 200,
+    "date": "2023-02-07",
+    "category": "Miscellaneous"
+  },
+  {
+    "expense": "Hair cut",
+    "cost": 400,
+    "date": "2022-03-20",
+    "category": "Personal-Care"
+  },
+  {
+    "expense": "Bread",
+    "cost": 30,
+    "date": "2023-02-08",
+    "category": "Groceries"
+  },
+  {
+    "expense": "Water bill",
+    "cost": 500,
+    "date": "2022-05-06",
+    "category": "Utilities"
+  },
+  {
+    "expense": "Movie rental",
+    "cost": 50,
+    "date": "2022-02-11",
+    "category": "Entertainment"
+  },
+  {
+    "expense": "Random item",
+    "cost": 100,
+    "date": "2022-02-09",
+    "category": "Miscellaneous"
+  }
+]
